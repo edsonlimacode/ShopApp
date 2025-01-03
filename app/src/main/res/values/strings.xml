@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ShopApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="currency_simble">R$ %1$s</string>
+
+    <string-array name="installments">
+        <item>1x</item>
+        <item>2x</item>
+        <item>3x</item>
+        <item>4x</item>
+        <item>5x</item>
+        <item>6x</item>
+        <item>7x</item>
+        <item>8x</item>
+        <item>9x</item>
+        <item>10x</item>
+        <item>11x</item>
+        <item>12x</item>
+    </string-array>
+</resources>

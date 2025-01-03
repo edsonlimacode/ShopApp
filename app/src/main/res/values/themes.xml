@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ShopApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/primaryDefault</item>
+        <item name="colorPrimaryVariant">@color/primaryDefault</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="android:windowBackground">@color/grayLight</item>
+
+    </style>
+
+    <style name="Theme.ShopApp" parent="Base.Theme.ShopApp">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Spashscreen-->
+    <style name="Theme.AppSplashscreen" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">
+            @color/primaryDefault
+        </item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
+            @drawable/spashscreen
+        </item>
+        <item name="postSplashScreenTheme">@style/Theme.ShopApp</item>
+    </style>
+
+    <style name="ImageCornerRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

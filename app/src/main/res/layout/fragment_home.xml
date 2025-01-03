@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presenter.home.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/bg_home_topbar"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="24dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_map_pin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
+
+        <TextView
+            android:id="@+id/textAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fifth Avenue,\n New York"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/btnOpenMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintBottom_toBottomOf="@+id/btnOpenMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnOpenMenu"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textNotification"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/bg_cart_notification"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnCart"
+            app:layout_constraintEnd_toEndOf="@+id/btnCart"
+            app:layout_constraintStart_toStartOf="@+id/btnCart"
+            app:layout_constraintTop_toTopOf="@+id/btnCart"
+            app:layout_constraintVertical_bias="0.833" />
+
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_search_view"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/transparent"
+            android:queryHint="Search"
+            android:searchIcon="@drawable/ic_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnOpenMenu" />
+
+        <TextView
+             android:id="@+id/textView3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="24dp"
+             android:text="Categories"
+             android:textSize="24dp"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/view" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/rvCategories"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"
+             android:clipToPadding="false"
+             android:orientation="horizontal"
+             android:paddingHorizontal="16dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/textView3"
+             tools:itemCount="2"
+             tools:listitem="@layout/item_category" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/rvProducts"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_marginHorizontal="8dp"
+             android:layout_marginTop="16dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.5"
+
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/rvCategories"
+             tools:listitem="@layout/item_produtc" />
+
+
+        <ProgressBar
+            android:id="@+id/pbProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="520dp"
+            android:indeterminateTint="@color/primaryDefault"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+             android:id="@+id/pbCategories"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="40dp"
+             android:layout_marginTop="32dp"
+             android:indeterminateTint="@color/primaryDefault"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</ScrollView>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.edsonlimadev.shopapp.presenter.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.product.details.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.edsonlimadev.shopapp.presenter.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.address.AddressFragment"
+        android:label="AddressFragment" >
+        <action
+            android:id="@+id/action_addressFragment_to_paymentTypeFragment"
+            app:destination="@id/paymentTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentPixFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.payment.PaymentPixFragment"
+        android:label="fragment_payment_pix"
+        tools:layout="@layout/fragment_payment_pix" />
+    <fragment
+        android:id="@+id/paymentTypeFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.payment.PaymentTypeFragment"
+        android:label="PaymentTypeFragment" >
+        <action
+            android:id="@+id/action_paymentTypeFragment_to_paymentCreditCardFragment"
+            app:destination="@id/paymentCreditCardFragment" />
+        <action
+            android:id="@+id/action_paymentTypeFragment_to_paymentPixFragment"
+            app:destination="@id/paymentPixFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentCreditCardFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.payment.PaymentCreditCardFragment"
+        android:label="fragment_payment_credit_card"
+        tools:layout="@layout/fragment_payment_credit_card" />
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.edsonlimadev.shopapp.presenter.finish.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" /><action android:id="@+id/action_global_finishFragment" app:destination="@id/finishFragment"/><action android:id="@+id/action_global_nav_home" app:destination="@id/nav_home"/>
+</navigation>
